@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bestie Chill Generator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #f6d365, #fda085);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      width: 90%;
+      max-width: 420px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #555;
+    }
+
+    button {
+      background: #ff8a65;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    button:hover {
+      background: #ff7043;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+      text-align: left;
+    }
+
+    li {
+      background: #f7f7f7;
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    input[type="checkbox"] {
+      transform: scale(1.2);
+    }
+
+    .footer {
+      margin-top: 15px;
+      font-size: 12px;
+      color: #777;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Bestie Chill Ideas 💛</h1>
+    <p>Generate something cozy to do together</p>
+
+    <button onclick="generateIdea()">Generate Idea</button>
+
+    <ul id="ideaList"></ul>
+
+    <div class="footer">
+      Made for besties ✨
+    </div>
+  </div>
+
+  <script>
+    const ideas = [
+      "Watch a comfort movie together",
+      "Late-night snack run",
+      "Listen to music and talk",
+      "Take a chill walk",
+      "Make hot chocolate or tea",
+      "Play a low-effort game",
+      "Do nothing but vibe",
+      "Scroll TikTok together",
+      "Cook something simple",
+      "Stargaze or sit outside"
+    ];
+
+    function generateIdea() {
+      const randomIdea = ideas[Math.floor(Math.random() * ideas.length)];
+      const list = document.getElementById("ideaList");
+
+      const listItem = document.createElement("li");
+
+      listItem.innerHTML = `
+        <input type="checkbox">
+        <span>${randomIdea}</span>
+      `;
+
+      list.appendChild(listItem);
+    }
+  </script>
+
+</body>
+</html>
